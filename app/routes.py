@@ -1,21 +1,21 @@
 from app import app 
+from flask import render_template
 
 @app.route('/')
 
-
 def index():
-    return '''Olá mundo!'''
+    return render_template('index.html',titulo = 'Página inicial')
 
-@app.route('/contato')
-def contato():
-    return 'Meu contato: (84) 98111-0891'
 
-@app.route('/sobre')
-def sobre():
-    return 'Meu nome é Maria Eduarda, aluna do Senac'
 
 # rota para projetos
 
 @app.route('/Projetos')
 def Projeto():
     return 'Projetos'
+
+#projeto para html
+
+@app.route('/projetos')
+def projeto():
+    return render_template('projetos.html', titulo = 'Projetos')
