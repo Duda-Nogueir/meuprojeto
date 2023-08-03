@@ -16,6 +16,12 @@ def Projeto():
 
 #projeto para html
 
-@app.route('/projetos')
-def projeto():
-    return render_template('projetos.html', titulo = 'Projetos')
+@app.route('/contatos')
+def contatos():
+    return render_template('contatos.html', titulo = 'Contatos')
+
+#rota do sobre 
+
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html', titulo = 'Sobre')
