@@ -24,3 +24,7 @@ def contatos():
 @app.route('/sobre')
 def sobre():
     return render_template('sobre.html', titulo = 'Sobre')
+
+@app.route('/viagens')
+def viagens():
+    return render_template('viagens.html', titulo = 'Viagens')
