@@ -13,9 +13,11 @@ header {
     position: relative; /* Para posicionar o campo de busca em relação ao cabeçalho */
 }
 
-/* Aplicando a fonte Bungee ao título "Descubra o Mundo!" */
-.title {
-    font-family: 'Bungee', Arial, sans-serif;
+/* Centralizando o texto "Descubra o Mundo!" no cabeçalho e usando a fonte customizada */
+h1 {
+    text-align: center;
+    font-family: 'Desired Font', Arial, sans-serif;
+    font-size: 40px; /* Tamanho da fonte */
 }
 
 /* Estilizando o menu na horizontal e centralizando */
@@ -70,34 +72,35 @@ nav a {
     border-radius: 5px;
 }
 
-/* Estilizando o conteúdo do blog */
-.blog-post {
-    background-color: #e9baba; /* Cor de fundo da postagem */
+section {
+    flex-basis: calc(50% - 20px);
+    margin: 10px;
+    padding: 40px;
+    background-color: #e9baba; /* Cor de fundo da seção */
     border: 1px solid #e2cfcf;
     margin: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Adicionando sombra na postagem */
-    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Adicionando sombra na seção */
 }
 
-.blog-post h2 {
+section h2 {
     margin-top: 10;
     font-size: 30px;
-    color: #50030d; /* Cor do título da postagem */
+    color: #50030d; /* Cor do título da seção */
 }
 
-.blog-post p {
+section p {
     font-size: 16px;
-    color: #50030d; /* Cor do texto da postagem */
+    color: #50030d; /* Cor do texto da seção */
 }
 
 /* Estilizando a lista de novidades */
-.blog-post ul {
+section ul {
     list-style: none;
     padding: 0;
     margin-top: 20px;
 }
 
-.blog-post li {
+section li {
     margin-bottom: 10px;
     color: #50030d; /* Cor do texto da lista */
 }

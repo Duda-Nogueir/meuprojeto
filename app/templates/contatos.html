@@ -4,8 +4,46 @@
 <section>
     <!-- Conteúdo da segunda seção -->
     <h2>Contato</h2>
+    {% with messages = get_flashed_messages() %}
+       {% if messages %}
+         {% for messages in messages %}
+          <div class="alert alert-success" role="alert">
+            {{messages}}
+          </div>
+           
+          {% endfor %}
+       {% endif %}
+    {% endwith %}
     <p>Para facilitar sua reserva entre em contato com o nosso suporte 85 98867-5663</p>
     <p>Envie suas histórias de viagem, dicas ou fotos para o e-mail: contribuicoes@viagenspelomundo.com</p>
+
+    <div class="contato-form">
+        <form action="" method="post">
+            {{ formulario.csrf_token }}
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                {{ formulario.nome }}
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                {{ formulario.email }}
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                {{ formulario.telefone }}
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                {{ formulario.mensagem }}
+            </div>
+
+           {{ formulario.enviar }}
+        </form>
+    </div>
+
 </section>
 
 {% endblock %}

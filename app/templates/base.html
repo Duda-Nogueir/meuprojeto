@@ -6,26 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ titulo }}</title>
     <link rel="stylesheet" href="{{url_for('static',filename='css/estilo.css')}}">
-    <style>
-        @font-face {
-            font-family: 'Bungee';
-            src: url('{{url_for("static", filename="fonts/Bungee-Regular.ttf")}}') format('truetype');
-            /* Adicione outros formatos de fonte aqui, se necessário */
-        }
-    </style>
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <h1 class="title">Descubra o Mundo!</h1>
+            <h1>Descubra o Mundo!</h1>
             <nav>
                 <ul>
                     <li><a href="/">Página Inicial</a></li>
                     <li><a href="/contatos">Contatos</a></li>
                     <li><a href="/sobre">Sobre</a></li>
-                    <li><a href="/viagens">Viagens</a></li>
-                    <li><a href="/blog">Blog</a></li> <!-- Adicione uma nova página para o blog -->
+                    
                 </ul>
             </nav>
         </div>
