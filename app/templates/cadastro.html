@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+<section class="cadastro-section my-10"> <!-- Adicionei a classe 'my-5' para adicionar margens verticalmente -->
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+       {% if messages %}
+         {% for messages in messages %}
+          <div class="alert alert-success" role="alert">
+            {{messages}}
+          </div>
+           
+          {% endfor %}
+       {% endif %}
+    {% endwith %}
+        <h2 class="text-center">Cadastre-se</h2>
+        <form action="" method="post" class="cadastro-form">
+            {{cadastro.csrf_token}}
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                 {{cadastro.nome}}
+            </div>
+            <div class="mb-3">
+                <label for="sobrenome" class="form-label">Sobrenome:</label>
+                 {{cadastro.sobrenome}}
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail:</label>
+                 {{cadastro.email}}
+            </div>
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha:</label>
+                  {{cadastro.senha}}
+            </div>
+
+            {{cadastro.enviar}}
+            
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+
+

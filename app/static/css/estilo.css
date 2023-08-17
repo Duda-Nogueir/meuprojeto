@@ -1,73 +1,34 @@
-/* Restante do CSS permanece o mesmo */
-
-.container {
-    max-width: 1200px; /* Largura máxima do conteúdo do site */
-    margin: 0 auto; /* Centraliza a div container horizontalmente */
-    padding: 10px; /* Adiciona um espaçamento interno para o conteúdo */
-}
-
-header {
-    background-color: #50030d; /* Cor do fundo do cabeçalho */
-    color: #ee949a; /* Cor do texto do cabeçalho */
-    padding: 10px;
-    position: relative; /* Para posicionar o campo de busca em relação ao cabeçalho */
-}
-
-/* Centralizando o texto "Descubra o Mundo!" no cabeçalho e usando a fonte customizada */
-h1 {
-    text-align: center;
-    font-family: 'Desired Font', Arial, sans-serif;
-    font-size: 40px; /* Tamanho da fonte */
-}
-
-/* Estilizando o menu na horizontal e centralizando */
-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Espaçamento entre o título e o menu */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav li {
-    display: inline; /* Torna os itens do menu inline */
-    margin-right: 20px; /* Adiciona um espaçamento entre os itens do menu */
-}
-
-nav li:last-child {
-    margin-right: 0; /* Remove o espaçamento do último item do menu */
-}
-
 /* Estilizando o texto dos links do menu */
 nav a {
-    color: #fff; /* Cor do texto do menu (branco) */
-    font-weight: bold; /* Texto do menu em negrito */
+    
+    
+    color: #eb9191; /* Cor do texto do menu (branco) */
     text-decoration: none; /* Removendo sublinhado dos links */
+    background-color: #50030d; /* Cor de fundo do cabeçalho */
+    color: #fff; /* Cor do texto do cabeçalho (branco) */
+
 }
 
 /* Adicionando estilo à caixa de busca */
 .search-box {
     position: absolute; /* Posiciona a caixa de busca em relação ao cabeçalho */
-    bottom: 10px; /* Distância entre o campo de busca e a parte inferior do cabeçalho */
-    right: 20px; /* Distância entre o campo de busca e a lateral direita do cabeçalho */
+    top: 150px; /* Distância entre o campo de busca e o topo do cabeçalho */
+    left: 1500px; /* Posição à esquerda do cabeçalho */
     display: flex;
     align-items: center;
 }
 
 .search-box input {
     padding: 5px;
-    border: 1px solid #fff; /* Bordas brancas */
+    border: 1px solid #df9d9d; /* Bordas brancas */
     border-radius: 5px;
     margin-right: 10px; /* Espaçamento entre a caixa de busca e o botão */
 }
 
 .search-box button {
     padding: 5px 10px;
-    background-color: #ee949a; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão (branco) */
+    background-color: #ecb6ba; /* Cor de fundo do botão */
+    color: #e78c8c; /* Cor do texto do botão (branco) */
     border: none;
     border-radius: 5px;
 }
