@@ -17,8 +17,18 @@
                     <li><a href="/">Página Inicial</a></li>
                     <li><a href="/contatos">Contatos</a></li>
                     <li><a href="/sobre">Sobre</a></li>
-                    <li><a href="/cadastro">Cadastre-se</a></li>
-                    <li><a href="/login">Login</a></li>
+                    
+                {% if session['email'] %} 
+                <li><nav>Olá, {{ session['nome'] }}</nav></li>
+                <li><a href="/sair">Sair</a></li>
+                {% else %}
+
+                <li><a href="/cadastro">Cadastre-se</a></li>
+                <li><a href="/login">Login</a></li>
+
+                {% endif %}    
+
+   
                 </ul>
             </nav>
         </div>
