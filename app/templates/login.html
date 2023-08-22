@@ -1,34 +1,40 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-<section class="login-section">
-    {% with messages = get_flashed_messages() %}
-       {% if messages %}
-         {% for messages in messages %}
-          <div class="alert alert-success" role="alert">
-            {{messages}}
-          </div>
-           
-          {% endfor %}
-       {% endif %}
+<section class="main-content">
+  {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for mensagem in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ mensagem }}
+            </div>
+            {% endfor %}
+        {% endif %}
     {% endwith %}
-    <div class="container">
-        <h2 class="text-center">Login</h2>
-        <form action="" method="post" class="login-form">
-            <div class="mb-3">
-                <label for="email" class="form-label">E-mail:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="senha" class="form-label">Senha:</label>
-                <input type="password" class="form-control" id="senha" name="senha" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Entrar</button>
-        </form>
+  <h2 class="mb-4">Login</h2>
+  <form action="" method="post" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+      <div class="invalid-feedback">
+        Por favor, insira um email válido.
+      </div>
     </div>
+    
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" class="form-control" id="senha" name="senha" required>
+      <div class="invalid-feedback">
+        Por favor, insira a senha.
+      </div>
+    </div>
+    
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="lembrarUsuario" name="lembrarUsuario">
+      <label class="form-check-label" for="lembrarUsuario">Lembrar Usuário</label>
+    </div>
+    
+    <button class="btn btn-primary" type="submit">Entrar</button>
+  </form>
 </section>
 {% endblock %}
-
-
-
-

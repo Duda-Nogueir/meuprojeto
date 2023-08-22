@@ -2,49 +2,72 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ titulo }}</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/estilo.css')}}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{titulo}}</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/estilo.css')}}">
+  <!-- Incluindo o Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Descubra o Mundo!</h1>
-            <nav>
-                <ul>
-                    <li><a href="/">Página Inicial</a></li>
-                    <li><a href="/contatos">Contatos</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                    
-                {% if session['email'] %} 
-                <li><nav>Olá, {{ session['nome'] }}</nav></li>
-                <li><a href="/sair">Sair</a></li>
-                {% else %}
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Reflexões em Pauta</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="/projetos">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contatos">Contatos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a></li>
+        {% if session['email'] %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Olá, {{ session['nome'].capitalize() }}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+            <h6 class="dropdown-header">Informações do Usuário</h6>
+            <div class="dropdown-divider"></div>
+            <p class="dropdown-item"><strong>Nome:</strong> {{ session['nome'] }}</p>
+            <p class="dropdown-item"><strong>Email:</strong> {{ session['email'] }}</p>
 
-                <li><a href="/cadastro">Cadastre-se</a></li>
-                <li><a href="/login">Login</a></li>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/editar">Editar Dados</a>
+            <a class="dropdown-item" href="/sair">Sair</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/excluir_conta" onclick="return confirm('Tem certeza de que deseja excluir sua conta? Essa ação é irreversível.');">Excluir Conta</a>
+          </div>
+        </li>
+        {% else %}
+        <li class="nav-item"><a class="nav-link" href="/cadastro">Cadastre-se</a></li>
+        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-                {% endif %}    
-
-   
-                </ul>
-            </nav>
-        </div>
-        <div class="search-box">
-            <input type="text" placeholder="Buscar">
-            <button type="submit">Pesquisar</button>
-        </div>
-    </header>
-
+  <div class="container mt-4">
     {% block conteudo %}
 
     {% endblock %}
+  </div>
 
-    <footer>
-        <p>© 2023 Meu Site. Todos os direitos reservados.</p>
-    </footer>
+  <footer class="mt-5">
+    <div class="container text-center">
+      <p>&copy;Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Incluindo o Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
