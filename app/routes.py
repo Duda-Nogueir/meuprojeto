@@ -33,9 +33,9 @@ def sobre():
 def projetos():
     return render_template('projetos.html', titulo = 'Projetos' )
 
-@app.route('/blog')
-def blog():
-    return render_template('blog.html', tituto = 'Blog')
+@app.route('/ideias')
+def ideias():
+    return render_template('ideias.html', tituto = 'Ideias')
 
 @app.route('/cadastro', methods=['POST', 'GET'])
 def cadastro():
